@@ -1,0 +1,1 @@
+Coin predictator is a project that try to predict future coin prices.
