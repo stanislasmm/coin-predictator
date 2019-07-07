@@ -22,6 +22,7 @@ RUN apt-get install -y python3.6
 RUN apt-get install -y python3.6-dev
 RUN apt-get install -y gettext-base
 RUN apt-get install -y python-dev
+RUN apt-get install -y libssl-dev
 
 # pip install
 RUN wget https://bootstrap.pypa.io/get-pip.py
