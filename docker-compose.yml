@@ -17,3 +17,4 @@ services:
     container_name: coin_predictator_postgres
     volumes:
       - "./data/db/postgres:/var/lib/postgresql/data"
+      - "./app/scripts/db:/scripts/db"
