@@ -37,7 +37,7 @@ RUN pip install httpie
 
 # Computation backend initialization
 RUN mkdir -p /app
-RUN cd /app && virtualenv -p python3.6 /venv --prompt="(DISP-COMPUTATIONAL)"
+RUN cd /app && virtualenv -p python3.6 /venv --prompt="(VENV)"
 ADD requirements.txt /app/requirements.txt
 RUN /bin/bash -c "cd /app/ && source /venv/bin/activate && pip3.6 install -r requirements.txt"
 RUN mkdir -p /app/src

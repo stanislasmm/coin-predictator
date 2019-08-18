@@ -3,13 +3,17 @@ version: '2'
 services:
   app:
     build: app/.
-    container_name: dcb_${ENV}
+    container_name: coin_predictator_app
+    volumes:
+       - ./app/src/:/app/src/
     env_file:
       - app/.env
     tty: true
     stdin_open: true
     container_name: coin_predictator_app
 
-  aerospike:
-    image: aerospike:4.5.3.3
-    container_name: coin_predictator_aerospike
+  postgres:
+    image: postgres:11
+    container_name: coin_predictator_postgres
+    volumes:
+      - "./data/db/postgres:/var/lib/postgresql/data"
