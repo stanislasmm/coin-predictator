@@ -1,7 +1,7 @@
 # Version: 0.0.1
-FROM phusion/baseimage:0.9.22
+FROM ubuntu:18.04
 
-
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y 
 RUN apt-get update && apt-get install -y \
 	locales \
@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN locale-gen en_US.UTF-8 && export LANG=en_US.UTF-8 && export LC_ALL=en_US.UTF-8
 
-RUN apt-get update && apt-get install -y tzdata curl vim git pv wget g++
-
+RUN apt-get install -y tzdata curl vim git pv wget g++
 RUN mkdir -p /usr/local/share/tmp
 RUN mkdir -p /usr/local/var/log/
 RUN add-apt-repository ppa:deadsnakes/ppa
@@ -20,9 +19,11 @@ RUN apt-get upgrade -y
 RUN apt-get install -y python2.7
 RUN apt-get install -y python3.6
 RUN apt-get install -y python3.6-dev
+RUN apt-get install -y python3-distutils
 RUN apt-get install -y gettext-base
 RUN apt-get install -y python-dev
 RUN apt-get install -y libssl-dev
+RUN apt-get install -y libpq-dev
 
 # pip install
 RUN wget https://bootstrap.pypa.io/get-pip.py

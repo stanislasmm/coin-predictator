@@ -1,1 +1,2 @@
-aerospike==3.7.2
+psycopg2==2.8.3
+pandas==0.24.2
